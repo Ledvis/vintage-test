@@ -25,7 +25,7 @@
               {{ item.body }}
             </p>
           </template>
-          <CommentList :comments="comments" />
+          <CommentList :comments="comments" v-if="!isEditing"/>
           <form class="editor" @submit.prevent="save">
             <textarea placeholder="Leave comment..." class="editor__field" v-model="text"></textarea>
             <span class="editor__count">{{ inputTextLength }}/300</span>
@@ -114,7 +114,7 @@ export default {
   },
   watch: {
     id() {
-      alert("ura");
+      this.getItems();
     }
   }
 };
