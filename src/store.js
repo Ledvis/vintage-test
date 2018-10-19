@@ -6,11 +6,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    items: []
+    items: [],
+    error: ""
   },
   mutations: {
     SET_ITEMS(state, payload) {
       Vue.set(state, "items", payload);
+    },
+    SET_ERROR(state, payload) {
+      state.error = payload;
     },
     ADD_COMMENT(state, { itemId, comment }) {
       const item = state.items.find(item => item.id === itemId);
@@ -40,6 +44,10 @@ export default new Vuex.Store({
         })
         .then(items => {
           commit("SET_ITEMS", items);
+        })
+        .catch(err => {
+          commit("SET_ERROR", "Oops something went wrong. Reload the page");
+          throw new Error(err);
         });
     },
     createComment({ commit }, { itemId, comment }) {
@@ -70,6 +78,7 @@ export default new Vuex.Store({
   getters: {
     items: state => state.items,
     item: state => id => state.items.find(item => item.id === id),
-    comments: state => id => state.items.find(item => item.id === id).comments
+    comments: state => id => state.items.find(item => item.id === id).comments,
+    error: state => state.error
   }
 });
