@@ -1,0 +1,100 @@
+.card {
+  &__wrapper {
+    @include container;
+  }
+
+  &__item {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+  }
+
+  &__container {
+    position: relative;
+    margin: 3rem 0;
+  }
+
+  &__back {
+    @include vertical-center;
+    
+    margin-right: auto;
+    color: black;
+    transition: all ease 0.4s;
+
+    &:hover {
+      color: rgb(48, 93, 77);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $main-font;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &__header {
+    box-shadow: 0 1px 2px rgba(10,10,10,.1);
+  }
+
+  &__header-title {
+    margin: 0;
+    padding: .75rem;
+    color: rgb(54, 54, 54);
+    font-family: $main-font;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__descr {
+    position: relative;
+    margin: 0 0 2rem;
+    font-size: 1.2rem;
+    font-family: $main-font;
+  }
+
+  &__footer {
+    border-top: 1px solid rgb(219, 219, 219);
+    align-items: stretch;
+    display: flex;
+  }
+
+  &__footer-btn {
+    @include button-reset;
+    
+    display: flex;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 0.75rem;
+    color: rgb(87, 172, 141);
+    font-family: $main-font;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all ease 0.4s;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid rgb(219, 219, 219);
+    }
+
+    &:hover {
+      color: rgb(48, 93, 77);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    i {
+      margin-left: 0.5rem;
+    }
+  }
+}

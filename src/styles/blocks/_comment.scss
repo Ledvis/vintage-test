@@ -1,0 +1,27 @@
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: $main-font;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(54, 54, 54);
+  border-radius: 4px;
+  
+  .fa-comments {
+    margin-right: 10px;
+  }
+
+  .fa-times {
+    position: relative;
+    right: -1.5rem;
+    margin-left: auto;
+    transition: all ease 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(48, 93, 77);
+    }
+  }
+}

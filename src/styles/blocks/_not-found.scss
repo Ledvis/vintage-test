@@ -1,0 +1,29 @@
+.not-found {
+  &__wrapper {
+    @include container;
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-family: $main-font;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &__link {
+    color: rgb(87, 172, 141);
+    font-family: $main-font;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: all ease 0.4s;
+    
+    &:hover {
+      color: rgb(48, 93, 77);
+    }
+  }
+}

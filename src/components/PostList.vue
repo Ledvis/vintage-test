@@ -5,8 +5,8 @@
 
 <template>
   <ul class="post-list">
-    <h1 class="post-list__title">Post lists</h1>
-    <hr>
+    <h1 class="post-list__title">Post list</h1>
+    <hr class="post-list__divider">
     <PostListItem 
       v-for="(item, index) in items" :key="index"
       :item="item"
@@ -25,9 +25,6 @@ export default {
   },
   computed: {
     ...mapGetters(["items"])
-  },
-  created() {
-    console.log(this.items);
   }
 };
 </script>

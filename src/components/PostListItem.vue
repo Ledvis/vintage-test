@@ -5,7 +5,10 @@
 
 <template>
   <li class="post-list__item">
-    <router-link :to="{name: 'post', params: {id: item.id}}" class="post-list__caption">{{ item.title }}</router-link>
+    <router-link :to="{name: 'post', params: {id: item.id}}" class="post-list__anchor">
+      <i class="fas fa-link post-list__icon"></i>
+      {{ item.title }}
+    </router-link>
   </li>
 </template>
 
@@ -17,9 +20,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  created() {
-    console.log(this.item);
   }
 };
 </script>
