@@ -1,0 +1,14 @@
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__title {
+    font-family: $main-font;
+    text-align: center;
+  }
+
+  &__item {
+    font-family: $main-font;
+  }
+}

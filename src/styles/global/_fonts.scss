@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Neo Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Neo Sans Pro Regular"), local("NeoSansPro-Regular"), url($font-path + "NeoSansPro-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neo Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Neo Sans Pro Light"), local("NeoSansPro-Light"), url($font-path + "NeoSansPro-Light.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neo Sans Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Neo Sans Pro Bold"), local("NeoSansPro-Bold"), url($font-path + "NeoSansPro-Bold.woff") format("woff");
+  font-display: swap;
+}
