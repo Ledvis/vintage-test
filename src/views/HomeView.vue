@@ -1,23 +1,23 @@
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/styles/style.scss";
-@import "@/styles/blocks/_home.scss";
 </style>
 
 <template>
-  <section class="home">
-    <div class="home__wrapper">
-      <PostList/>
-    </div>
-  </section>
+  <div>
+    <InfoBlock/>
+    <LocationBlock/>
+  </div>
 </template>
 
 <script>
-import PostList from "@/components/PostList.vue";
+import InfoBlock from "@/components/InfoBlock.vue";
+import LocationBlock from "@/components/LocationBlock.vue";
 
 export default {
-  name: "PostListView",
+  name: "HomeView",
   components: {
-    PostList
+    InfoBlock,
+    LocationBlock
   }
 };
 </script>

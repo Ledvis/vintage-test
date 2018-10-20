@@ -6,7 +6,7 @@
     width: 768px;
   }
   @include media-min($desktop-width) {
-    width: 768px;
+    width: 1160px;
   }
 }
 
@@ -127,4 +127,8 @@
   @media only screen and (max-width: $width) {
     @content;
   }
+}
+
+@mixin ease-out {
+  transition: all 0.3s ease-out;
 }

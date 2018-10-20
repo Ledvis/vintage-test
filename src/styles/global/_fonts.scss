@@ -1,23 +1,35 @@
 @font-face {
-  font-family: "Neo Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Neo Sans Pro Regular"), local("NeoSansPro-Regular"), url($font-path + "NeoSansPro-Regular.woff") format("woff");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neo Sans Pro";
+  font-family: "Suisse Intl";
   font-style: normal;
   font-weight: 300;
-  src: local("Neo Sans Pro Light"), local("NeoSansPro-Light"), url($font-path + "NeoSansPro-Light.woff") format("woff");
+  src:
+    local("Suisse Intl Light"),
+    local("SuisseIntl-Light"),
+    url($assets-path + "fonts/SuisseIntl-Light.woff2") format("woff2"),
+    url($assets-path + "fonts/SuisseIntl-Light.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Neo Sans Pro";
+  font-family: "Suisse Intl";
   font-style: normal;
-  font-weight: 500;
-  src: local("Neo Sans Pro Bold"), local("NeoSansPro-Bold"), url($font-path + "NeoSansPro-Bold.woff") format("woff");
+  font-weight: 400;
+  src:
+    local("Suisse Intl"),
+    local("SuisseIntl"),
+    url($assets-path + "fonts/SuisseIntl.woff2") format("woff2"),
+    url($assets-path + "fonts/SuisseIntl.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("Suisse Intl Semi Bold"),
+    local("SuisseIntl-SemiBold"),
+    url($assets-path + "fonts/SuisseIntl-SemiBold.woff2") format("woff2"),
+    url($assets-path + "fonts/SuisseIntl-SemiBold.woff") format("woff");
   font-display: swap;
 }

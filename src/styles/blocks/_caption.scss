@@ -1,0 +1,23 @@
+.caption {
+  margin: 0;
+  color: rgb(46, 46, 46);
+  font-family: $main-font;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 34px;
+
+  &--color-white {
+    color: white;
+  }
+
+  strong {
+    color: rgb(61, 181, 101);
+  }
+}
+
+@include media-min($tablet-width) {
+  .caption {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
