@@ -1,0 +1,55 @@
+.contact {
+  background: url($assets-path + "img/pattern.png") repeat center;
+  background-size: cover;
+  
+  &__wrapper {
+    @include container;
+    padding: 30px 10px;
+  }
+  
+  &__caption {
+    margin-bottom: 15px;
+  }
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+}
+
+@include media-min($tablet-width) {
+  .contact {
+    &__caption {
+      margin-bottom: 30px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+}
+
+@include media-min($desktop-width) {
+  .contact {
+    &__wrapper {
+      padding: 90px 60px 100px;
+    }
+    
+    &__container {
+      display: flex;
+    }
+
+    &__form {
+      flex-basis: 540px;
+      margin: 0 75px 0 0;
+    }
+  }
+}

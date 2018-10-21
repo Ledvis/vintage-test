@@ -1,7 +1,7 @@
 <template>
   <div>
-    <gmap-map :center="center" :zoom="12" :options="{styles: styles}" style="width:100%;  height: 100%;">
-      <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" @click="center=m.position"></gmap-marker>
+    <gmap-map :center="currentCoordinates" :zoom="12" :options="{styles: styles}" style="width:100%;  height: 100%;">
+      <gmap-marker :position="currentCoordinates" :icon="icon"></gmap-marker>
     </gmap-map>
   </div>
 </template>
@@ -13,14 +13,18 @@ export default {
   name: "GoogleMap",
   data() {
     return {
-      // default to Montreal to keep it simple
-      // change this to whatever makes sense
-      center: { lat: 45.508, lng: -73.587 },
-      markers: [],
-      places: [],
-      currentPlace: null,
-      styles: googleMapStyle
+      styles: googleMapStyle,
+      icon: "https://vintage-test.netlify.com/img/marker.b217466a.svg"
     };
+  },
+
+  computed: {
+    currentCoordinates() {
+      return this.$store.getters.currentCoordinates;
+    },
+    cityCoordinates() {
+      return this.$store.getters.cityCoordinates;
+    }
   },
 
   mounted() {
@@ -28,29 +32,25 @@ export default {
   },
 
   methods: {
-    // receives a place object via the autocomplete component
-    setPlace(place) {
-      this.currentPlace = place;
-    },
-    addMarker() {
-      if (this.currentPlace) {
-        const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
-    },
     geolocate: function() {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      });
+      return new Promise(resolve => {
+        navigator.geolocation.getCurrentPosition(position => {
+          resolve(position);
+        });
+      })
+        .then(position => {
+          const currentCoordinates = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          this.$store.dispatch("changeCurrentCoordinates", currentCoordinates);
+
+          if (!currentCoordinates) {
+            throw new Error("Enable your location");
+          }
+        })
+        .catch(err => alert(err));
     }
   }
 };
